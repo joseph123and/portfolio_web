@@ -124,135 +124,237 @@
             margin-bottom: 4px;
         }
 
-        /* Added CSS styles for Project Screenshots and Videos */
-        .project-media {
-            margin-top: 12px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-        }
-
-        .media-grid {
+        .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 15px;
         }
 
-        .media-grid img {
-            width: 100%;
-            height: auto;
-            border-radius: 6px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-            object-fit: cover;
+        .skill-category h3 {
+            font-size: 1rem;
+            color: var(--secondary-color);
+            margin-bottom: 8px;
         }
 
-        .media-video video {
-            width: 100%;
+        .skill-list p {
+            margin-bottom: 4px;
+            font-size: 0.95rem;
+        }
+
+        .ref-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .ref-card {
+            background-color: var(--light-bg);
+            padding: 12px;
             border-radius: 6px;
-            border: 1px solid var(--border-color);
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+        }
+
+        .ref-card p {
+            margin-bottom: 3px;
+        }
+
+        @media (max-width: 600px) {
+            .container {
+                padding: 20px;
+            }
+            .item-header {
+                flex-direction: column;
+            }
+            .item-date {
+                margin-top: 2px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="container">
-        <header>
-            <h1>Joseph Luneta</h1>
-            <div class="contact-info">
-                <p>Location: Kitwe, Copperbelt Province, Zambia</p>
-                <p>Email: <a href="mailto:josephluneta@example.com">josephluneta@example.com</a></p>
-                <p>LinkedIn: <a href="https://linkedin.com/in/josephluneta" target="_blank" rel="noopener noreferrer">linkedin.com/in/josephluneta</a></p>
-                <p>GitHub: <a href="https://github.com/josephluneta" target="_blank" rel="noopener noreferrer">github.com/josephluneta</a></p>
+<div class="container">
+    <header>
+        <h1>JOSEPH LUNETA</h1>
+        <div class="contact-info">
+            <p><strong>Address:</strong> CHACHACHA Kitwe Mukuba street EE2, Zambia</p>
+            <p><strong>Postal Code:</strong> 10101 Kitwe</p>
+            <p><strong>Email:</strong> <a href="mailto:lunetajoseph1@gmail.com">lunetajoseph1@gmail.com</a></p>
+            <p><strong>Phone:</strong> +260769324774 / +260978442964</p>
+            <p><strong>Date of Birth:</strong> July 18, 2001</p>
+            <p><strong>Place of Birth:</strong> Kitwe</p>
+            <p><strong>Driver's License:</strong> C1 Driver's License No: 50697477</p>
+            <p><strong>NRC Identification No:</strong> 395750/65/1</p>
+            <p><strong>Gender:</strong> Male</p>
+            <p><strong>Nationality:</strong> Zambian</p>
+            <p><strong>Civil Status:</strong> Unmarried</p>
+            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener noreferrer">linkedin.com/in/joseph-luneta-aa062833b</a></p>
+            <p><strong>GitHub:</strong> <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">github.com/joseph123and</a></p>
+        </div>
+    </header>
+
+    <section>
+        <h2>Professional Summary</h2>
+        <p class="summary">
+            I am a reliable and confident individual, recognized for a strong work ethic and a consistent commitment to exceeding expectations. I am a quick-thinking problem-solver who thrives on innovation, using a determined and gritty approach to overcome challenges and drive success. I foster collaboration by valuing input and maintaining high standards, even under pressure. I am now poised to contribute my skills and ambition to an organization where I can continue to grow and deliver exceptional value[cite: 2].
+        </p>
+    </section>
+
+    <section>
+        <h2>Education</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Bachelor of Software Engineering</span>
+                <span class="item-date">Jan 2021 – Oct 2025</span>
             </div>
-        </header>
+            <div class="item-subtitle">Zambia University College of Technology, Ndola</div>
+            <p><strong>Relevant Coursework:</strong> Multimedia, Web Design, Networking, Database Systems, Mobile Application Development, Hardware, Computer Systems Maintenance and Hardware, Software Design, Software Management, Distributed Systems, Advanced Database, Object-Oriented Programming, Introduction to IT, Communication and Technical Writing, Data Communications and Networks, Software Requirements, Software Testing[cite: 2].</p>
+            <p><strong>Key Projects:</strong></p>
+            <ul>
+                <li><strong>Final Year Project:</strong> Developed a Career Guidance system using Machine Learning to assist students identify and predict accurate career paths[cite: 2].</li>
+                <li><strong>Machine Learning & AI:</strong> Developed a proprietary recommendation engine from the ground up using Python and Scikit-learn. Leveraged NLP techniques to parse and understand user-described skills and ambitions[cite: 2].</li>
+                <li><strong>Full-Stack Development:</strong> Built a responsive web interface with React and a robust RESTful API with Node.js/Flask, handling all data processing and model inference on the backend[cite: 2].</li>
+                <li><strong>Data Engineering:</strong> Sourced, cleaned, and pre-processed a heterogeneous dataset from public APIs (e.g., O*NET) to train the ML model, addressing challenges of data normalization and feature selection[cite: 2].</li>
+                <li><strong>Impact & Results:</strong> The final system successfully provided users with a ranked list of top 5 career matches, along with required skill gaps and market insights, demonstrating a tangible application of AI for social good[cite: 2].</li>
+            </ul>
+        </div>
 
-        <section>
-            <h2>Professional Summary</h2>
-            <p class="summary">
-                Results-driven Software Engineer, Systems Architect, and Data Analyst with extensive experience designing automated web systems, real-time data streaming dashboards, machine learning solutions, and enterprise IT infrastructure.
-            </p>
-        </section>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Zambian School Certificate (Grade 12)</span>
+                <span class="item-date">2019</span>
+            </div>
+            <div class="item-subtitle">Mpongwe South Boarding Secondary School</div>
+        </div>
+    </section>
 
-        <section>
-            <h2>Projects</h2>
+    <section>
+        <h2>Employment</h2>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Digitalization IT AID</span>
+                <span class="item-date">Aug 2025 – Feb 2026</span>
+            </div>
+            <div class="item-subtitle">Occupational Health and Safety Institute, Kitwe</div>
+            <ul>
+                <li>Spearheaded the digital transformation of manual, paper-based occupational health and safety (OHS) processes, including incident reporting, risk assessments, and medical surveillance records, onto a centralized digital platform[cite: 2].</li>
+                <li>Organized and managed large volumes of data on company database systems, contributing to the overall efficiency and accuracy of operational processes[cite: 2].</li>
+            </ul>
+        </div>
 
-            <!-- Project 1: GeoStream -->
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">GeoStream - Automated Vehicle Security Dashboard</span>
-                    <span class="item-date">July 2026</span>
-                </div>
-                <div class="item-subtitle">Full-Stack Real-Time Vehicle Security & Geolocation Tracking System</div>
-                <ul>
-                    <li>Engineered a full-stack automated vehicle security dashboard featuring real-time data streaming via WebSockets and live location mapping.</li>
-                    <li>Integrated interactive live charts and responsive telemetry metrics to provide instant alert notifications and diagnostic views.</li>
-                </ul>
-                
-                <!-- Project Media: Screenshots & Video -->
-                <div class="project-media">
-                    <div class="media-grid">
-                        <img src="images/geostream-dashboard.png" alt="GeoStream Live Dashboard Screenshot">
-                        <img src="images/geostream-map.png" alt="GeoStream Real-Time Tracking Map Screenshot">
-                    </div>
-                    <div class="media-video">
-                        <video controls poster="images/geostream-video-thumbnail.png">
-                            <source src="videos/geostream-demo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">IT & Business Development Assistant</span>
+                <span class="item-date">Jun 2022 – May 2024</span>
+            </div>
+            <div class="item-subtitle">RASO Mine Ltd, Ndola</div>
+            <ul>
+                <li>Provided comprehensive technical support to staff, troubleshooting hardware, software, and network issues to ensure seamless daily operations[cite: 2].</li>
+                <li>Provided first-line support for hardware and software issues in an industrial environment[cite: 2].</li>
+                <li>Leveraged technical expertise to prepare compelling sales presentations and demonstrations for clients, effectively communicating the company's value proposition[cite: 2].</li>
+                <li>Acted as a point of contact for potential clients, utilizing strong communication skills to understand their needs and present company offerings[cite: 2].</li>
+                <li>Assisted in maintaining user accounts and IT security protocols, ensuring a secure and reliable technological environment[cite: 2].</li>
+                <li>Managed the setup, configuration, and maintenance of desktops, laptops, and printers, minimizing downtime for the sales and management teams[cite: 2].</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">Lead Software Engineer & Systems Architect (Contract-based)</span>
+                <span class="item-date">October 2025 – March 2026</span>
+            </div>
+            <div class="item-subtitle">Commonwealth RB, Ndola</div>
+            <ul>
+                <li>Built and designed the company's front-end website from scratch, handling UX/UI design through to implementation[cite: 2].</li>
+                <li>Spearheaded the conceptualization, system design, and full-stack development of the official enterprise website platform from scratch, aligning technological solutions with organizational goals[cite: 2].</li>
+                <li>Architected a modular, highly available system topology using microservices/RESTful APIs, optimizing server-side processing and ensuring minimal latency under high concurrent user traffic[cite: 2].</li>
+                <li>Supervised the development lifecycle and engineered a highly responsive, secure user interface utilizing modern JavaScript frameworks, backed by a robust, secure database schema design[cite: 2].</li>
+                <li>Integrated enterprise-grade authentication protocols, role-based access control (RBAC), and multi-layered data encryption mechanisms to safeguard sensitive organizational data[cite: 2].</li>
+                <li>Orchestrated the deployment strategy using cloud infrastructure, leveraging containerization and automated CI/CD pipelines to ensure seamless, zero-downtime updates and reliable system performance[cite: 2].</li>
+            </ul>
+        </div>
+
+        <div class="item">
+            <div class="item-header">
+                <span class="item-title">IT Infrastructure Administrator & Systems Security Engineer (Contract-based)</span>
+                <span class="item-date">May 2026 – August 2026</span>
+            </div>
+            <div class="item-subtitle">Creative Touch Branding, Kitwe</div>
+            <ul>
+                <li>Engineered and setup installation of CCTV security footprint and deploying, configuring enterprise Hikvision hardware; established isolated network subnets, secure IP routing, and centralized storage configurations to maintain fault-tolerant, high-bandwidth surveillance feeds across the company premises[cite: 2].</li>
+                <li>Designed, installed, and configured the company's biometric fingerprint scanner hardware from the ground up and engineered the access control system by linking physical authentication nodes with Hikvision iVMS software and implementing custom database schema configurations to automate personnel access logging, audit trails, and employee check-in/check-out tracking[cite: 2].</li>
+                <li>Designed and configured an executive command node featuring centralized multi-screen endpoint monitoring, client-side telemetry tracking, and administrative privileges to oversee workstation activities across the enterprise network[cite: 2].</li>
+                <li>Configured and deployed local server systems, establishing baseline security protocols, role-based access control (RBAC), user account management, and optimized data routing to ensure high network uptime and reliability[cite: 2].</li>
+                <li>Executed system-wide security hardening, incorporating encrypted communication streams between security hardware and central servers, endpoint privilege management, and automated failover logging to protect internal operational data[cite: 2].</li>
+            </ul>
+        </div>
+    </section>
+
+    <section>
+        <h2>Skills</h2>
+        <div class="skills-grid">
+            <div class="skill-category">
+                <h3>Technical Skills</h3>
+                <div class="skill-list">
+                    <p><strong>MCSD, CSSLP:</strong> Very good[cite: 2]</p>
+                    <p><strong>Networking (Cisco Networking):</strong> Very good[cite: 2]</p>
+                    <p><strong>Database Design & Admin (MSSQL, MySQL, PostgreSQL):</strong> Excellent[cite: 2]</p>
+                    <p><strong>Mobile App Development (Android/iOS):</strong> Very good[cite: 2]</p>
+                    <p><strong>Programming Languages (PHP, Java, JavaScript, HTML, CSS, .NET, C++, Python):</strong> Excellent[cite: 2]</p>
+                    <p><strong>Version Control Systems (SVN, CVS, Git):</strong> Very good[cite: 2]</p>
+                    <p><strong>Operating Systems (Linux & Windows):</strong> Excellent[cite: 2]</p>
+                    <p><strong>Software & Tools (MS Office Suite, Photoshop, Canva):</strong> Very good[cite: 2]</p>
                 </div>
             </div>
 
-            <!-- Project 2: AI Career Guidance System -->
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">AI Career Guidance Management System</span>
-                    <span class="item-date">March 2026</span>
-                </div>
-                <div class="item-subtitle">Machine Learning Career Advisory Platform</div>
-                <ul>
-                    <li>Developed an intelligent career guidance platform using Python and scikit-learn to deliver custom recommendations based on user assessment matrices.</li>
-                    <li>Implemented automated data processing pipelines and evaluated user testing matrices for high recommendation accuracy.</li>
-                </ul>
-                
-                <!-- Project Media: Screenshots -->
-                <div class="project-media">
-                    <div class="media-grid">
-                        <img src="images/ai-career-portal.png" alt="AI Career Guidance Portal Screenshot">
-                        <img src="images/ai-career-results.png" alt="Machine Learning Recommendation Results Screenshot">
-                    </div>
+            <div class="skill-category">
+                <h3>Soft Skills</h3>
+                <div class="skill-list">
+                    <p><strong>Leadership:</strong> Excellent[cite: 2]</p>
+                    <p><strong>Programming & Coding:</strong> Excellent[cite: 2]</p>
+                    <p><strong>Time Management:</strong> Excellent[cite: 2]</p>
+                    <p><strong>Creativity:</strong> Very good[cite: 2]</p>
+                    <p><strong>Problem-Solving:</strong> Very good[cite: 2]</p>
+                    <p><strong>Effective Communication:</strong> Very good[cite: 2]</p>
+                    <p><strong>Critical Thinking:</strong> Very good[cite: 2]</p>
+                    <p><strong>Social Skills:</strong> Very good[cite: 2]</p>
+                    <p><strong>Fast Learner:</strong> Very good[cite: 2]</p>
+                    <p><strong>Grit:</strong> Very good[cite: 2]</p>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Project 3: Automated Sprinkler System -->
-            <div class="item">
-                <div class="item-header">
-                    <span class="item-title">Automated Irrigation & Sprinkler System</span>
-                    <span class="item-date">August 2026</span>
-                </div>
-                <div class="item-subtitle">IoT Hardware & Control Software Project</div>
-                <ul>
-                    <li>Architected control mechanisms and collaboration specifications for an automated smart sprinkler system tailored for efficient resource utilization.</li>
-                </ul>
+    <section>
+        <h2>Languages</h2>
+        <p><strong>English:</strong> Fluent | <strong>Bemba:</strong> Fluent[cite: 2]</p>
+    </section>
 
-                <!-- Project Media: Screenshots & Video -->
-                <div class="project-media">
-                    <div class="media-grid">
-                        <img src="images/sprinkler-diagram.png" alt="Automated Sprinkler System Diagram">
-                    </div>
-                    <div class="media-video">
-                        <video controls poster="images/sprinkler-thumbnail.png">
-                            <source src="videos/sprinkler-demo.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                    </div>
-                </div>
+    <section>
+        <h2>References</h2>
+        <div class="ref-grid">
+            <div class="ref-card">
+                <p><strong>Mr. Freeman Sichilima</strong></p>
+                <p>Deputy Registrar</p>
+                <p>Zambia University College of Technology, Ndola</p>
+                <p><strong>Phone:</strong> +260777798978</p>
             </div>
-
-        </section>
-    </div>
+            <div class="ref-card">
+                <p><strong>Mukamooya Haamakowa</strong></p>
+                <p>IT Coordinator</p>
+                <p>Occupational Health and Safety Institute, Kitwe</p>
+                <p><strong>Phone:</strong> +260977360857 / +260968277968</p>
+                <p><strong>Email:</strong> Mukamooya.haamakowa@ohsi.org.zm / hamakowamukamoya@gmail.com</p>
+            </div>
+            <div class="ref-card">
+                <p><strong>Mr. Ernest Mulenga</strong></p>
+                <p>Operations / Project Administrator</p>
+                <p>Commonwealth RB, Ndola</p>
+                <p><strong>Phone:</strong> +260763910021</p>
+            </div>
+        </div>
+    </section>
+</div>
 
 </body>
 </html>
