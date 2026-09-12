@@ -1,169 +1,244 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Joseph Luneta | Software Engineer & Systems Architect</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>App Showcase & Media Gallery</title>
+  <style>
+    :root {
+      --bg-color: #0f172a;
+      --card-bg: rgba(30, 41, 59, 0.7);
+      --border-color: rgba(255, 255, 255, 0.1);
+      --text-main: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-glow: rgba(56, 189, 248, 0.3);
+      --radius: 16px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 3.5rem;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      background: linear-gradient(135deg, #38bdf8 0%, #818cf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 0.75rem;
+    }
+
+    .media-section {
+      margin-bottom: 4rem;
+    }
+
+    /* Video Section Styling */
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .video-card {
+      background: var(--card-bg);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 15px 35px -5px var(--accent-glow);
+    }
+
+    .video-wrapper {
+      position: relative;
+      width: 100%;
+      background: #000;
+    }
+
+    .video-wrapper video {
+      width: 100%;
+      height: auto;
+      display: block;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .card-info {
+      padding: 1.25rem;
+    }
+
+    .card-info h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .card-info p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* Screenshots Grid Styling */
+    .screenshot-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .screenshot-card {
+      background: var(--card-bg);
+      -webkit-backdrop-filter: blur(12px);
+      backdrop-filter: blur(12px);
+      border: 1px solid var(--border-color);
+      border-radius: var(--radius);
+      overflow: hidden;
+      cursor: pointer;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+
+    .screenshot-card:hover {
+      transform: scale(1.02);
+      border-color: var(--accent);
+    }
+
+    .screenshot-card img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    /* Responsive Tweaks */
+    @media (max-width: 640px) {
+      header h1 {
+        font-size: 2rem;
+      }
+      body {
+        padding: 1rem 0.5rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav class="navbar">
-    <div class="logo">Joseph Luneta<span>.</span></div>
-    <ul class="nav-links">
-      <li><a href="#about">About</a></li>
-      <li><a href="#vision">Vision</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a href="#experience">Experience</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-    <div class="menu-toggle" id="mobile-menu">
-      <i class="fas fa-bars"></i>
-    </div>
-  </nav>
+  <div class="container">
+    <header>
+      <h1>Project Showcase</h1>
+      <p>Explore full application walkthroughs and feature screenshots</p>
+    </header>
 
-  <!-- Hero Section -->
-  <header class="hero" id="about">
-    <div class="hero-container">
-      <div class="hero-avatar">
-        <img src="./assets/Picture.jpeg" alt="Joseph Luneta" />
-      </div>
-      <div class="hero-content">
-        <h1>Joseph Luneta</h1>
-        <h2>Software Engineer | Digital Innovator & Systems Architect</h2>
-        <p>Building secure full-stack applications, real-time telemetry systems, and centralized digital ecosystems that bridge software engineering with real-business strategy.</p>
-        <div class="hero-btns">
-          <a href="./assets/Joseph_Luneta_CV.pdf" class="btn primary" download="Joseph_Luneta_CV.pdf">Download CV <i class="fas fa-download"></i></a>
-          <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer" class="btn secondary">GitHub <i class="fab fa-github"></i></a>
-          <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener noreferrer" class="btn secondary">LinkedIn <i class="fab fa-linkedin"></i></a>
+    <!-- Video Demos Section -->
+    <section class="media-section">
+      <h2 class="section-title">🎥 Video Demos</h2>
+      <div class="video-grid">
+
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls poster="./assets/videos/demo-poster1.jpg">
+              <source src="./assets/videos/demo1.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="card-info">
+            <h3>System Overview Walkthrough</h3>
+            <p>A complete walkthrough of core features and controls.</p>
+          </div>
         </div>
-      </div>
-    </div>
-  </header>
 
-  <!-- Vision & Strategy Section -->
-  <section id="vision" class="section">
-    <h2 class="section-title">Digital Strategy & Architect Vision</h2>
-    <div class="vision-card">
-      <div class="vision-img">
-        <img src="./assets/picture%202.jpg" alt="Joseph Luneta at work" />
-      </div>
-      <div class="vision-text">
-        <blockquote class="quote">
-          "My journey as a systems architect is defined by a transition from technical execution to high-level digital strategy. While my foundation in software engineering provided the logic for languages like Python, Java, and C++, my true evolution occurred when I began architecting complex, end-to-end solutions, such as an AI-driven career guidance system."
-        </blockquote>
-        <p>Throughout my career, I have applied this architectural lens to spearhead digital transformations—moving organizations from manual, paper-based processes to centralized, digital ecosystems that drive operational efficiency. My grit and commitment to innovation allow me to connect technical infrastructure with real business needs, building systems that don't just function, but endure.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Technical Skills -->
-  <section id="skills" class="section">
-    <h2 class="section-title">Technical Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-card">
-        <i class="fas fa-code"></i>
-        <h3>Languages</h3>
-        <p>Python, JavaScript, PHP, Java, C++, HTML5, CSS3</p>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-layer-group"></i>
-        <h3>Frameworks & Web</h3>
-        <p>React, Node.js, Flask, Vue.js, Laravel, REST APIs</p>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-database"></i>
-        <h3>Databases & Cloud</h3>
-        <p>MySQL, PostgreSQL, Firebase, Docker, Microsoft Azure</p>
-      </div>
-      <div class="skill-card">
-        <i class="fas fa-shield-alt"></i>
-        <h3>Security & Network</h3>
-        <p>Hikvision iVMS, Biometrics, Network Hardening, System Administration, Git</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Featured Projects -->
-  <section id="projects" class="section">
-    <h2 class="section-title">Featured Projects</h2>
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>GeoStream — Vehicle Telemetry Dashboard</h3>
-        <p>Automated vehicle security and telemetry platform featuring real-time data streaming over WebSockets, live speed charts, and interactive Leaflet geolocation map routing.</p>
-        <div class="tags">
-          <span>JavaScript</span><span>WebSockets</span><span>Leaflet.js</span><span>Chart.js</span>
+        <div class="video-card">
+          <div class="video-wrapper">
+            <video controls poster="./assets/videos/demo-poster2.jpg">
+              <source src="./assets/videos/demo2.mp4" type="video/mp4">
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          <div class="card-info">
+            <h3>Real-time Dashboard Feature</h3>
+            <p>Live stream data presentation and mapping interactions.</p>
+          </div>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">View Repository <i class="fas fa-code"></i></a>
+
+      </div>
+    </section>
+
+    <!-- Screenshots Showcase Section -->
+    <section class="media-section">
+      <h2 class="section-title">🖼️ Feature Screenshots</h2>
+      <div class="screenshot-grid">
+
+        <div class="screenshot-card">
+          <img src="./assets/screenshots/dashboard.png" alt="Dashboard Screenshot" loading="lazy">
+          <div class="card-info">
+            <h3>Analytics Dashboard</h3>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <h3>RB Commonwealth Enterprise Platform</h3>
-        <p>High-availability enterprise portal featuring live analytics dashboards, market rate tracking, secure document uploads, dynamic financial modules, and RBAC authentication.</p>
-        <div class="tags">
-          <span>Full-Stack</span><span>REST APIs</span><span>RBAC</span><span>Security</span>
+        <div class="screenshot-card">
+          <img src="./assets/screenshots/user-management.png" alt="User Management Screenshot" loading="lazy">
+          <div class="card-info">
+            <h3>User Management</h3>
+          </div>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">View Repository <i class="fas fa-code"></i></a>
+
+        <div class="screenshot-card">
+          <img src="./assets/screenshots/settings.png" alt="Settings Page Screenshot" loading="lazy">
+          <div class="card-info">
+            <h3>System Settings</h3>
+          </div>
         </div>
-      </div>
 
-      <div class="project-card">
-        <h3>AI Career Guidance Recommendation System</h3>
-        <p>Machine learning-powered career path recommendation engine using Scikit-learn and NLP to evaluate user skill sets against industry standards and deliver top-ranked guidance.</p>
-        <div class="tags">
-          <span>Python</span><span>Scikit-learn</span><span>NLP</span><span>Flask</span>
+        <div class="screenshot-card">
+          <img src="./assets/screenshots/mobile-view.png" alt="Mobile Responsive View" loading="lazy">
+          <div class="card-info">
+            <h3>Mobile View</h3>
+          </div>
         </div>
-        <div class="project-links">
-          <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">View Repository <i class="fas fa-code"></i></a>
-        </div>
+
       </div>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- Work Experience -->
-  <section id="experience" class="section">
-    <h2 class="section-title">Work Experience</h2>
-    <div class="timeline">
-      <div class="timeline-item">
-        <h3>IT Infrastructure Admin & Security Engineer</h3>
-        <span class="company">Creative Touch Branding, Kitwe | May 2026 – Aug 2026</span>
-        <p>Deployed Hikvision CCTV security footprints, biometrics access nodes, iVMS software integration, and network privilege hardening across enterprise workstations.</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Lead Software Engineer & Systems Architect</h3>
-        <span class="company">RB Commonwealth, Ndola | Oct 2025 – Mar 2026</span>
-        <p>Architected microservices topology, designed web UI/UX, implemented role-based access control (RBAC), and automated cloud deployments.</p>
-      </div>
-
-      <div class="timeline-item">
-        <h3>Digitalization IT Aid</h3>
-        <span class="company">Occupational Health & Safety Institute, Kitwe | Aug 2025 – Feb 2026</span>
-        <p>Spearheaded digital transformation for over 14,000 incident reports, risk assessments, and medical surveillance records.</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact -->
-  <section id="contact" class="section">
-    <h2 class="section-title">Get In Touch</h2>
-    <div class="contact-card">
-      <p><i class="fas fa-envelope"></i> lunetajoseph1@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +260 769324774 / +260 978442964</p>
-      <p><i class="fas fa-map-marker-alt"></i> Kitwe, Copperbelt Province, Zambia</p>
-    </div>
-  </section>
-
-  <footer>
-    <p>&copy; 2026 Joseph Luneta. All rights reserved.</p>
-  </footer>
-
-  <script src="script.js"></script>
 </body>
 </html>
