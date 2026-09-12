@@ -3,551 +3,117 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Joseph Luneta | Software Engineer & Systems Architect Portfolio</title>
-  
-  <!-- Google Fonts: Modern Serif for Headings & Clean Sans for Body -->
+  <title>Joseph Luneta | Software Engineer & Systems Architect</title>
+
+  <!-- Google Fonts: Playfair Display (Editorial Serif) & Inter (Clean Sans-Serif) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400..700;1,6..96,400..700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500&family=Playfair+Display:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
 
-  <style>
-    /* RESET & BASE STYLES */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      background-color: #0a0a0a;
-      color: #e5e5e5;
-      font-family: 'Inter', sans-serif;
-      line-height: 1.6;
-      font-weight: 300;
-      padding: 0;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 60px 24px;
-    }
-
-    /* TYPOGRAPHY */
-    h1, h2, h3 {
-      font-family: 'Bodoni Moda', Georgia, serif;
-      font-weight: 400;
-      color: #ffffff;
-      letter-spacing: -0.02em;
-    }
-
-    h1 {
-      font-size: clamp(2.8rem, 6vw, 5.2rem);
-      line-height: 1.05;
-      margin-bottom: 24px;
-    }
-
-    h2 {
-      font-size: clamp(2.2rem, 4vw, 3.8rem);
-      line-height: 1.1;
-      margin-bottom: 40px;
-    }
-
-    p {
-      color: #a3a3a3;
-      font-size: 1.05rem;
-      max-width: 480px;
-    }
-
-    .badge {
-      display: inline-block;
-      border: 1px solid #333;
-      border-radius: 50px;
-      padding: 10px 24px;
-      font-size: 0.9rem;
-      color: #d4d4d4;
-      margin-bottom: 30px;
-    }
-
-    .arrow-label {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.95rem;
-      color: #e5e5e5;
-      margin-bottom: 12px;
-    }
-
-    .hero-cta {
-      margin-top: 30px;
-    }
-
-    .arrow-label::before {
-      content: "↳";
-      font-size: 1.2rem;
-    }
-
-    /* LAYOUT SECTIONS */
-    section {
-      padding: 80px 0;
-    }
-
-    .grid-2 {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: center;
-    }
-
-    .grid-2-start {
-      align-items: flex-start;
-    }
-
-    .grid-3 {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 30px;
-    }
-
-    .grid-4 {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 20px;
-    }
-
-    /* ARCH / OVAL IMAGE SHAPES (Reflects Canva Design Aesthetic) */
-    .arch-frame {
-      width: 100%;
-      height: 480px;
-      border-radius: 200px 200px 200px 200px / 280px 280px 280px 280px;
-      overflow: hidden;
-      background-color: #171717;
-      border: 1px solid #262626;
-      position: relative;
-    }
-
-    .arch-frame-quote {
-      height: 380px;
-      border-radius: 200px;
-    }
-
-    .arch-frame-sm {
-      width: 100%;
-      height: 320px;
-      border-radius: 140px 140px 0 0;
-      overflow: hidden;
-      background-color: #171717;
-      border: 1px solid #262626;
-      position: relative;
-      margin-bottom: 16px;
-    }
-
-    .arch-frame-portrait {
-      border-radius: 260px 260px 200px 200px;
-    }
-
-    .arch-frame img, .arch-frame-sm img, .arch-frame video {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: grayscale(20%) contrast(105%);
-      transition: transform 0.5s ease;
-    }
-
-    .arch-frame:hover img, .arch-frame-sm:hover img {
-      transform: scale(1.03);
-    }
-
-    /* HERO SECTION */
-    .hero {
-      min-height: 85vh;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-right {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-end;
-      justify-content: space-between;
-      height: 100%;
-    }
-
-    /* BACKGROUND / TIMELINE */
-    .timeline-group {
-      margin-bottom: 40px;
-    }
-
-    .timeline-group h3 {
-      font-size: 1.3rem;
-      margin-bottom: 16px;
-    }
-
-    .timeline-list {
-      list-style: none;
-      padding-left: 20px;
-    }
-
-    .timeline-list li {
-      color: #a3a3a3;
-      position: relative;
-      margin-bottom: 12px;
-      font-size: 0.95rem;
-    }
-
-    .timeline-list li::before {
-      content: "•";
-      color: #737373;
-      position: absolute;
-      left: -15px;
-    }
-
-    .timeline-list li span {
-      display: block;
-      color: #525252;
-      font-size: 0.85rem;
-    }
-
-    /* CARD / GALLERY ITEMS */
-    .portfolio-item {
-      display: flex;
-      flex-direction: column;
-    }
-
-    .portfolio-item p {
-      font-size: 0.9rem;
-      color: #a3a3a3;
-    }
-
-    /* QUOTE / BANNER SECTION */
-    .quote-section {
-      text-align: left;
-      padding: 120px 0;
-    }
-
-    .quote-section h2 {
-      font-size: clamp(2.5rem, 5vw, 4.5rem);
-      max-width: 650px;
-      line-height: 1.1;
-    }
-
-    /* MEDIA / VIDEO EMBED CONTAINER */
-    .video-card {
-      position: relative;
-      width: 100%;
-      height: 320px;
-      border-radius: 140px 140px 0 0;
-      overflow: hidden;
-      background: #121212;
-      border: 1px solid #262626;
-      margin-bottom: 16px;
-    }
-
-    .video-card video, .video-card iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-      object-fit: cover;
-    }
-
-    /* FOOTER / CONTACT */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 40px;
-      border-top: 1px solid #262626;
-      padding-top: 60px;
-      margin-top: 60px;
-    }
-
-    .footer-col h4 {
-      font-size: 1rem;
-      color: #ffffff;
-      margin-bottom: 12px;
-      font-weight: 500;
-    }
-
-    .footer-col p, .footer-col a {
-      color: #a3a3a3;
-      font-size: 0.95rem;
-      display: block;
-    }
-
-    .membership-title {
-      font-size: 0.85rem;
-      color: #666;
-      margin-top: 4px;
-    }
-
-    .profile-link {
-      margin-top: 4px;
-    }
-
-    .cta-link {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      gap: 8px;
-      font-size: 1.1rem;
-      color: #ffffff;
-      margin-top: 40px;
-    }
-
-    .cta-link .arrow-label {
-      font-size: 1.1rem;
-      color: #ffffff;
-    }
-
-    /* RESPONSIVE DESIGN */
-    .hero > .grid-2 {
-      width: 100%;
-    }
-
-    @media (max-width: 900px) {
-      .grid-2, .grid-3, .grid-4, .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-
-      .hero-right {
-        align-items: flex-start;
-      }
-
-      .arch-frame {
-        height: 380px;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <div class="container">
+  <!-- Navigation Bar -->
+  <nav class="navbar">
+    <div class="logo">JL</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Work</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact" class="pill-btn">Get in touch</a></li>
+    </ul>
+  </nav>
 
-    <!-- HERO SECTION -->
-    <section class="hero">
-      <div class="grid-2">
-        <div>
-          <h1>Welcome to My Portfolio</h1>
-          <div class="badge">Joseph Luneta / Software Engineer & Systems Architect</div>
-        </div>
-        <div class="hero-right">
-          <div class="arch-frame">
-            <!-- Replace src with your profile photo URL -->
-            <img src="https://via.placeholder.com/600x800/1e1e1e/ffffff?text=Joseph+Luneta" alt="Professional portrait placeholder for Joseph Luneta, a software engineer and systems architect, against a dark background; the displayed text reads Joseph Luneta. The tone is formal and professional.">
-          </div>
-          <div class="hero-cta">
-            <a href="#contact" class="arrow-label">Work with me today</a>
-          </div>
-        </div>
+  <!-- Hero Section -->
+  <header class="hero-section">
+    <div class="hero-content">
+      <span class="subhead">↳ Software Engineer & Systems Architect</span>
+      <h1 class="hero-title">Crafting elegant software, scalable systems, and digital experiences.</h1>
+      <p class="hero-desc">
+        Specializing in full-stack engineering, system design, and AI-driven automation. Dedicated to clean architecture and minimalist design principles.
+      </p>
+      <div class="hero-action">
+        <a href="#projects" class="pill-btn">View Projects ↳</a>
       </div>
-    </section>
+    </div>
 
-    <!-- ABOUT SECTION -->
-    <section>
-      <div class="grid-2">
-        <div>
-          <h2>Who is Joseph?</h2>
-          <p>
-            I am a Software Engineer, Systems Architect, and Chief Data Analyst with extensive experience building full-stack web applications, real-time tracking systems, custom machine learning models, and administrative IT infrastructure.
-          </p>
-        </div>
-        <div>
-          <div class="arch-frame arch-frame-portrait">
-            <!-- Replace src with an about/workspace photo -->
-            <img src="https://via.placeholder.com/600x800/171717/ffffff?text=Workspace+%26+Engineering" alt="Workspace and engineering placeholder showing a dark, minimalist technical environment; the displayed text reads Workspace & Engineering. The tone is focused and professional.">
-          </div>
-        </div>
+    <!-- Tilted Oval Masked Portrait Image -->
+    <div class="hero-image-wrapper">
+      <div class="tilted-oval-frame">
+        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Joseph Luneta Portrait">
       </div>
-    </section>
+    </div>
+  </header>
 
-    <!-- BACKGROUND & EXPERIENCE -->
-    <section>
-      <h2>My Background</h2>
-      <div class="grid-2 grid-2-start">
-        <div></div> <!-- Empty column for asymmetrical classic grid feel -->
-        <div>
-          
-          <!-- Education -->
-          <div class="timeline-group">
-            <div class="arrow-label"><strong>Education & Qualifications</strong></div>
-            <ul class="timeline-list">
-              <li>
-                <strong>B.Sc. in Software Engineering</strong>
-                <span>Zambia University College of Technology</span>
-              </li>
-              <li>
-                <strong>Registered Member</strong>
-                <span>ICT Association of Zambia (ICTAZ)</span>
-              </li>
-              <li>
-                <strong>Microsoft Azure AI Essentials</strong>
-                <span>Certified Assessment & Practical Competency</span>
-              </li>
-            </ul>
-          </div>
+  <!-- Featured Work Section -->
+  <section id="projects" class="projects-section">
+    <div class="section-header">
+      <span class="subhead">↳ Selected Works</span>
+      <h2 class="section-title">Engineered with Precision</h2>
+    </div>
 
-          <!-- Work Experience -->
-          <div class="timeline-group">
-            <div class="arrow-label"><strong>Work Experience</strong></div>
-            <ul class="timeline-list">
-              <li>
-                <strong>Software Engineer & Systems Architect</strong>
-                <span>Independent / Project Contracts</span>
-              </li>
-              <li>
-                <strong>Chief Data Analyst & IT Aid</strong>
-                <span>Occupational Health and Safety Institute (OHSI)</span>
-                <span>Digitized 14,000+ medical and administrative records</span>
-              </li>
-              <li>
-                <strong>IT Infrastructure & Access Control Specialist</strong>
-                <span>Creative Touch Branding</span>
-                <span>CCTV, Biometric Systems, Sadp, and iVMS-4200 Deployment</span>
-              </li>
-              <li>
-                <strong>IT Support Technician</strong>
-                <span>RASO Mine Ltd</span>
-              </li>
-            </ul>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-    <!-- FEATURED PROJECTS (MY ART / PROJECTS) -->
-    <section>
-      <h2>Featured Engineering Projects</h2>
-      <div class="grid-3">
-        
-        <!-- Project 1 -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/500x600/1f1f1f/ffffff?text=GeoStream+Dashboard" alt="GeoStream Security Dashboard">
-          </div>
-          <div class="arrow-label"><strong>GeoStream Dashboard</strong></div>
-          <p>Real-time vehicle security and mapping platform using WebSockets and live geolocation telemetry.</p>
-        </div>
-
-        <!-- Project 2 -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/500x600/1f1f1f/ffffff?text=AI+Career+Guidance" alt="AI Career Guidance System">
-          </div>
-          <div class="arrow-label"><strong>AI Career Guidance System</strong></div>
-          <p>Machine learning classification engine built with Python & Scikit-Learn for personalized career path recommendations.</p>
-        </div>
-
-        <!-- Project 3 -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/500x600/1f1f1f/ffffff?text=RB+Management+System" alt="RB Commonwealth System">
-          </div>
-          <div class="arrow-label"><strong>RB Commonwealth System</strong></div>
-          <p>Full-stack web application & centralized management portal engineered for client administration.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- QUOTE / PHILOSOPHY BANNER -->
-    <section class="quote-section">
-      <div class="grid-2">
-        <div>
-          <h2>Architecture speaks where complexity is unable to explain.</h2>
-        </div>
-        <div>
-          <div class="arch-frame arch-frame-quote">
-            <img src="https://via.placeholder.com/600x700/171717/ffffff?text=System+Architecture" alt="Architecture Diagram">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- MORE WORK & VIDEO SHOWCASE -->
-    <section>
-      <h2>Demos & System Infrastructure</h2>
-      <div class="grid-4">
-        
-        <!-- Showcase 1 (Image/Screenshot) -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/400x500/1c1c1c/ffffff?text=CCTV+%26+iVMS-4200" alt="CCTV Infrastructure">
-          </div>
-          <div class="arrow-label"><strong>Security Infrastructure</strong></div>
-          <p>Hikvision CCTV & biometric integration.</p>
-        </div>
-
-        <!-- Showcase 2 (Video Demo Embed/Placeholder) -->
-        <div class="portfolio-item">
-          <div class="video-card">
-            <!-- Replace with your actual video or mp4 link -->
-            <video controls poster="https://via.placeholder.com/400x500/1c1c1c/ffffff?text=Play+GeoStream+Demo">
-              <source src="geostream-demo.mp4" type="video/mp4">
-              Your browser does not support the video tag.
-            </video>
-          </div>
-          <div class="arrow-label"><strong>GeoStream Video Demo</strong></div>
-          <p>Live stream walkthrough of real-time mapping.</p>
-        </div>
-
-        <!-- Showcase 3 (Image/Screenshot) -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/400x500/1c1c1c/ffffff?text=Data+Pipelines" alt="Data Digitization Pipelines">
-          </div>
-          <div class="arrow-label"><strong>Data Digitization</strong></div>
-          <p>System architecture for 14,000+ medical records.</p>
-        </div>
-
-        <!-- Showcase 4 (Image/Screenshot) -->
-        <div class="portfolio-item">
-          <div class="arch-frame-sm">
-            <img src="https://via.placeholder.com/400x500/1c1c1c/ffffff?text=Automated+Sprinkler" alt="Automated Sprinkler System">
-          </div>
-          <div class="arrow-label"><strong>Automated Sprinkler</strong></div>
-          <p>IoT & Microcontroller logic hardware project.</p>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- CONTACT / FOOTER -->
-    <section id="contact">
-      <h2>Reach Out to Me</h2>
+    <div class="projects-grid">
       
-      <div class="footer-grid">
-        <div class="footer-col">
-          <h4>Location</h4>
-          <p>Copperbelt Province, Zambia</p>
+      <!-- Project 1 (Arch Top Image) -->
+      <article class="project-card">
+        <div class="arch-frame">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="GeoStream Dashboard">
         </div>
-
-        <div class="footer-col">
-          <h4>Email & Profiles</h4>
-          <a href="mailto:josephluneta@example.com">josephluneta@example.com</a>
-          <a href="https://github.com" target="_blank" rel="noopener" class="profile-link">GitHub Profile</a>
-          <a href="https://linkedin.com" target="_blank" rel="noopener" class="profile-link">LinkedIn Profile</a>
+        <div class="project-info">
+          <span class="project-category">Full-Stack / WebSockets</span>
+          <h3 class="project-title">GeoStream Dashboard</h3>
+          <p class="project-desc">Real-time vehicle security and mapping system with live data streaming and interactive charts.</p>
+          <a href="#" class="arrow-link">Explore Case Study ↳</a>
         </div>
+      </article>
 
-        <div class="footer-col">
-          <h4>Professional Membership</h4>
-          <p>ICT Association of Zambia (ICTAZ)</p>
-          <p class="membership-title">Licensed Software Engineer</p>
+      <!-- Project 2 (Arch Top Image) -->
+      <article class="project-card">
+        <div class="arch-frame">
+          <img src="https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80" alt="AI Career System">
+        </div>
+        <div class="project-info">
+          <span class="project-category">Machine Learning / Python</span>
+          <h3 class="project-title">AI Career Guidance System</h3>
+          <p class="project-desc">Automated career evaluation engine leveraging custom machine learning classification models.</p>
+          <a href="#" class="arrow-link">Explore Case Study ↳</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- About / Skills Section -->
+  <section id="about" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <span class="subhead">↳ Philosophy & Approach</span>
+        <h2 class="section-title">Design is how it works, not just how it looks.</h2>
+        <p>
+          I build robust web systems and software solutions using modern technologies including Python, Java, JavaScript, React, and Laravel. Every line of code and user interface is crafted with precision, security, and performance in mind.
+        </p>
+        <div class="skills-tags">
+          <span class="pill-tag">Python</span>
+          <span class="pill-tag">React / Vue</span>
+          <span class="pill-tag">Systems Architecture</span>
+          <span class="pill-tag">Docker / Cloud</span>
+          <span class="pill-tag">PostgreSQL</span>
         </div>
       </div>
+    </div>
+  </section>
 
-      <div class="cta-link">
-        <a href="mailto:josephluneta@example.com" class="arrow-label">Let's collaborate</a>
-      </div>
-    </section>
-
-  </div>
+  <!-- Footer / Contact -->
+  <footer id="contact" class="footer">
+    <div class="footer-content">
+      <h2 class="footer-title">Let’s build something extraordinary together.</h2>
+      <a href="mailto:contact@example.com" class="pill-btn large">Start a Conversation ↳</a>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Joseph Luneta. All rights reserved.</p>
+    </div>
+  </footer>
 
 </body>
 </html>
