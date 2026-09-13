@@ -3,358 +3,592 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Joseph Luneta - Curriculum Vitae</title>
+    <title>Joseph Luneta | Software Engineer Portfolio</title>
+    
+    <!-- Google Fonts: Playfair Display for headings, Inter for body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+
     <style>
+        /* --- CSS VARIABLES & RESET --- */
         :root {
-            --primary-color: #1e3a8a;
-            --secondary-color: #3b82f6;
-            --text-color: #1f2937;
-            --light-bg: #f3f4f6;
-            --border-color: #e5e7eb;
+            --bg-color: #0a0a0a;
+            --surface-color: #121212;
+            --text-main: #f5f5f5;
+            --text-muted: #888888;
+            --accent: #ffffff;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --font-heading: 'Playfair Display', serif;
+            --font-body: 'Inter', sans-serif;
+            --transition: all 0.3s ease;
         }
 
         * {
-            box-sizing: border-box;
             margin: 0;
             padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
         }
 
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: var(--text-color);
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: var(--font-body);
             line-height: 1.6;
-            background-color: #f8fafc;
-            padding: 20px;
+            overflow-x: hidden;
         }
 
-        .container {
-            max-width: 900px;
-            margin: 0 auto;
-            background: #ffffff;
-            padding: 40px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            border-radius: 8px;
-        }
-
-        header {
-            border-bottom: 2px solid var(--primary-color);
-            padding-bottom: 20px;
-            margin-bottom: 25px;
-        }
-
-        h1 {
-            color: var(--primary-color);
-            font-size: 2.2rem;
-            letter-spacing: 1px;
-            margin-bottom: 10px;
-        }
-
-        .contact-info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 8px 20px;
-            font-size: 0.95rem;
-        }
-
-        .contact-info p {
-            margin: 2px 0;
-        }
-
-        .contact-info a {
-            color: var(--secondary-color);
+        a {
+            color: var(--text-main);
             text-decoration: none;
+            transition: var(--transition);
         }
 
-        .contact-info a:hover {
-            text-decoration: underline;
-        }
-
-        section {
-            margin-bottom: 25px;
-        }
-
-        h2 {
-            color: var(--primary-color);
-            font-size: 1.3rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 5px;
-            margin-bottom: 12px;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .summary {
-            text-align: justify;
-        }
-
-        .item {
-            margin-bottom: 18px;
-        }
-
-        .item-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
-            margin-bottom: 4px;
-        }
-
-        .item-title {
-            font-weight: bold;
-            font-size: 1.05rem;
-        }
-
-        .item-subtitle {
-            font-style: italic;
-            color: #4b5563;
-        }
-
-        .item-date {
-            font-size: 0.9rem;
-            color: #6b7280;
-            white-space: nowrap;
+        a:hover {
+            color: var(--text-muted);
         }
 
         ul {
-            list-style-type: square;
-            margin-left: 20px;
-            margin-top: 5px;
+            list-style: none;
         }
 
-        li {
-            margin-bottom: 4px;
+        /* --- NAVIGATION --- */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(10, 10, 10, 0.9);
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
         }
 
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 8rem 5% 4rem;
+            gap: 4rem;
+        }
+
+        .hero-content {
+            flex: 1;
+            max-width: 600px;
+        }
+
+        .hero-content h1 {
+            font-family: var(--font-heading);
+            font-size: 4rem;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+        }
+
+        .hero-content h1 span {
+            font-style: italic;
+            color: var(--text-muted);
+        }
+
+        .hero-content p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 2.5rem;
+            max-width: 500px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 1px solid var(--text-main);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: var(--transition);
+        }
+
+        .btn:hover {
+            background-color: var(--text-main);
+            color: var(--bg-color);
+        }
+
+        .hero-image {
+            flex: 1;
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .hero-image img {
+            width: 100%;
+            max-width: 450px;
+            height: 600px;
+            object-fit: cover;
+            border-radius: 50% / 40%; /* Creates the organic oval shape */
+            border: 1px solid var(--border-color);
+            filter: grayscale(20%);
+            transition: var(--transition);
+        }
+
+        .hero-image img:hover {
+            filter: grayscale(0%);
+        }
+
+        /* --- GENERAL SECTION STYLES --- */
+        section {
+            padding: 8rem 5%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 3rem;
+            margin-bottom: 4rem;
+            font-weight: 400;
+        }
+
+        .section-title span {
+            font-style: italic;
+            color: var(--text-muted);
+            }
+
+            .projects-title {
+                margin-top: 6rem;
+        }
+
+        .projects-title {
+            margin-top: 6rem;
+        }
+
+        /* --- ABOUT SECTION --- */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-image img {
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            object-fit: cover;
+            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
+            border: 1px solid var(--border-color);
+        }
+
+        /* --- BACKGROUND (CV) SECTION --- */
+        .bg-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6rem;
+        }
+
+        .bg-column h3 {
+            font-family: var(--font-heading);
+            font-size: 1.8rem;
+            margin-bottom: 2rem;
+            font-weight: 400;
+        }
+
+        .timeline-item {
+            margin-bottom: 2.5rem;
+            padding-left: 1.5rem;
+            border-left: 1px solid var(--border-color);
+            position: relative;
+        }
+
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: -4px;
+            top: 8px;
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: var(--text-main);
+        }
+
+        .timeline-item h4 {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.3rem;
+        }
+
+        .timeline-item .date {
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .timeline-item p {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+        }
+
+        /* --- SKILLS & PROJECTS SECTION --- */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 15px;
-        }
-
-        .skill-category h3 {
-            font-size: 1rem;
-            color: var(--secondary-color);
-            margin-bottom: 8px;
-        }
-
-        .skill-list p {
-            margin-bottom: 4px;
-            font-size: 0.95rem;
-        }
-
-        .ref-grid {
-            display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 15px;
+            gap: 2rem;
+            margin-bottom: 4rem;
         }
 
-        .ref-card {
-            background-color: var(--light-bg);
-            padding: 12px;
-            border-radius: 6px;
+        .skill-card {
+            background-color: var(--surface-color);
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: var(--transition);
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--text-muted);
+        }
+
+        .skill-card h4 {
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+        }
+
+        .skill-card p {
             font-size: 0.9rem;
+            color: var(--text-muted);
         }
 
-        .ref-card p {
-            margin-bottom: 3px;
+        /* --- CERTIFICATIONS --- */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
         }
 
-        @media (max-width: 600px) {
-            .container {
-                padding: 20px;
+        .cert-item {
+            padding: 2rem;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+        }
+
+        .cert-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .cert-item p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+        }
+
+        /* --- CONTACT & FOOTER --- */
+        footer {
+            padding: 6rem 5% 3rem;
+            border-top: 1px solid var(--border-color);
+            background-color: var(--surface-color);
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 4rem;
+            margin-bottom: 4rem;
+        }
+
+        .footer-col h4 {
+            font-family: var(--font-heading);
+            font-size: 1.3rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .footer-col p, .footer-col a {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            display: block;
+        }
+
+        .footer-col a:hover {
+            color: var(--text-main);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+
+        /* --- RESPONSIVE DESIGN --- */
+        @media (max-width: 992px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 10rem;
             }
-            .item-header {
-                flex-direction: column;
+
+            .hero-content {
+                max-width: 100%;
             }
-            .item-date {
-                margin-top: 2px;
+
+            .hero-content p {
+                margin: 0 auto 2.5rem;
+            }
+
+            .hero-image {
+                justify-content: center;
+            }
+
+            .about-grid, .bg-container {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+
+            .about-image {
+                display: flex;
+                justify-content: center;
+            }
+
+            .nav-links {
+                display: none; /* Simplification for mobile, could add a hamburger menu */
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 {
+                font-size: 3rem;
+            }
+
+            .section-title {
+                font-size: 2.5rem;
+            }
+
+            section {
+                padding: 5rem 5%;
             }
         }
     </style>
 </head>
 <body>
 
-<div class="container">
-    <header>
-        <h1>JOSEPH LUNETA</h1>
-        <div class="contact-info">
-            <p><strong>Address:</strong> CHACHACHA Kitwe Mukuba street EE2, Zambia</p>
-            <p><strong>Postal Code:</strong> 10101 Kitwe</p>
-            <p><strong>Email:</strong> <a href="mailto:lunetajoseph1@gmail.com">lunetajoseph1@gmail.com</a></p>
-            <p><strong>Phone:</strong> +260769324774 / +260978442964</p>
-            <p><strong>Date of Birth:</strong> July 18, 2001</p>
-            <p><strong>Place of Birth:</strong> Kitwe</p>
-            <p><strong>Driver's License:</strong> C1 Driver's License No: 50697477</p>
-            <p><strong>NRC Identification No:</strong> 395750/65/1</p>
-            <p><strong>Gender:</strong> Male</p>
-            <p><strong>Nationality:</strong> Zambian</p>
-            <p><strong>Civil Status:</strong> Unmarried</p>
-            <p><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener noreferrer">linkedin.com/in/joseph-luneta-aa062833b</a></p>
-            <p><strong>GitHub:</strong> <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">github.com/joseph123and</a></p>
+    <!-- NAVIGATION -->
+    <nav>
+        <div class="logo">Joseph Luneta</div>
+        <div class="nav-links">
+            <a href="#about">About</a>
+            <a href="#background">Background</a>
+            <a href="#skills">Skills</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <!-- HERO SECTION -->
+    <header class="hero">
+        <div class="hero-content">
+            <h1>Welcome to My <span>Portfolio</span></h1>
+            <p>I am Joseph Luneta, a Software Engineer, Digital Innovator, and Systems Architect. I bridge the gap between data chaos and structured impact, building systems that endure.</p>
+            <a href="#contact" class="btn">Work with me today &rarr;</a>
+        </div>
+        <div class="hero-image">
+            <!-- Replace this src with the exact filename in your assets folder -->
+            <img src="./assets/picture.jpg" alt="Joseph Luneta Portrait">
         </div>
     </header>
 
-    <section>
-        <h2>Professional Summary</h2>
-        <p class="summary">
-            I am a reliable and confident individual, recognized for a strong work ethic and a consistent commitment to exceeding expectations. I am a quick-thinking problem-solver who thrives on innovation, using a determined and gritty approach to overcome challenges and drive success. I foster collaboration by valuing input and maintaining high standards, even under pressure. I am now poised to contribute my skills and ambition to an organization where I can continue to grow and deliver exceptional value[cite: 2].
-        </p>
-    </section>
-
-    <section>
-        <h2>Education</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Bachelor of Software Engineering</span>
-                <span class="item-date">Jan 2021 – Oct 2025</span>
+    <!-- ABOUT SECTION -->
+    <section id="about">
+        <h2 class="section-title">Who is <span>Joseph?</span></h2>
+        <div class="about-grid">
+            <div class="about-text">
+                <p>My journey as a systems architect is defined by a transition from technical execution to high-level digital strategy. While my foundation in software engineering provided the logic for languages like Python, Java, and C++, my true evolution occurred when I began architecting complex, end-to-end solutions.</p>
+                <p>I have applied this architectural lens to spearhead digital transformations, moving organizations from manual, paper-based processes to centralized, digital ecosystems that drive operational efficiency. My "grit" and commitment to innovation allow me to connect technical infrastructure with real business needs.</p>
             </div>
-            <div class="item-subtitle">Zambia University College of Technology, Ndola</div>
-            <p><strong>Relevant Coursework:</strong> Multimedia, Web Design, Networking, Database Systems, Mobile Application Development, Hardware, Computer Systems Maintenance and Hardware, Software Design, Software Management, Distributed Systems, Advanced Database, Object-Oriented Programming, Introduction to IT, Communication and Technical Writing, Data Communications and Networks, Software Requirements, Software Testing[cite: 2].</p>
-            <p><strong>Key Projects:</strong></p>
-            <ul>
-                <li><strong>Final Year Project:</strong> Developed a Career Guidance system using Machine Learning to assist students identify and predict accurate career paths[cite: 2].</li>
-                <li><strong>Machine Learning & AI:</strong> Developed a proprietary recommendation engine from the ground up using Python and Scikit-learn. Leveraged NLP techniques to parse and understand user-described skills and ambitions[cite: 2].</li>
-                <li><strong>Full-Stack Development:</strong> Built a responsive web interface with React and a robust RESTful API with Node.js/Flask, handling all data processing and model inference on the backend[cite: 2].</li>
-                <li><strong>Data Engineering:</strong> Sourced, cleaned, and pre-processed a heterogeneous dataset from public APIs (e.g., O*NET) to train the ML model, addressing challenges of data normalization and feature selection[cite: 2].</li>
-                <li><strong>Impact & Results:</strong> The final system successfully provided users with a ranked list of top 5 career matches, along with required skill gaps and market insights, demonstrating a tangible application of AI for social good[cite: 2].</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Zambian School Certificate (Grade 12)</span>
-                <span class="item-date">2019</span>
+            <div class="about-image">
+                <!-- Replace this src with the exact filename in your assets folder -->
+                <img src="./assets/picture 2.jpg" alt="Joseph Luneta Casual">
             </div>
-            <div class="item-subtitle">Mpongwe South Boarding Secondary School</div>
         </div>
     </section>
 
-    <section>
-        <h2>Employment</h2>
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Digitalization IT AID</span>
-                <span class="item-date">Aug 2025 – Feb 2026</span>
+    <!-- BACKGROUND SECTION -->
+    <section id="background">
+        <h2 class="section-title">My <span>Background</span></h2>
+        <div class="bg-container">
+            
+            <!-- Education -->
+            <div class="bg-column">
+                <h3>Education</h3>
+                <div class="timeline-item">
+                    <h4>Bachelor of Software Engineering</h4>
+                    <span class="date">Zambia University College of Technology, Ndola</span>
+                    <p>Relevant Coursework: Multimedia, Web Design, Networking, Database Systems, Mobile Application Development, Software Design, Distributed Systems, Advanced Database, OOP, Data Communications, Software Testing.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Zambian School Certificate (Grade 12)</h4>
+                    <span class="date">Mpongwe South Boarding Secondary School</span>
+                </div>
             </div>
-            <div class="item-subtitle">Occupational Health and Safety Institute, Kitwe</div>
-            <ul>
-                <li>Spearheaded the digital transformation of manual, paper-based occupational health and safety (OHS) processes, including incident reporting, risk assessments, and medical surveillance records, onto a centralized digital platform[cite: 2].</li>
-                <li>Organized and managed large volumes of data on company database systems, contributing to the overall efficiency and accuracy of operational processes[cite: 2].</li>
-            </ul>
-        </div>
 
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">IT & Business Development Assistant</span>
-                <span class="item-date">Jun 2022 – May 2024</span>
+            <!-- Work Experience -->
+            <div class="bg-column">
+                <h3>Work Experience</h3>
+                <div class="timeline-item">
+                    <h4>IT Infrastructure Administer & Systems Security Engineer</h4>
+                    <span class="date">Creative Touch Branding | May 2026 - Aug 2026</span>
+                    <p>Engineered CCTV and biometric fingerprint systems, established secure network subnets, and executed system-wide security hardening.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Lead Software Engineer & Systems Architect</h4>
+                    <span class="date">Commonwealth RB | Oct 2025 - Mar 2026</span>
+                    <p>Spearheaded full-stack development of enterprise website, architected modular system topology, and integrated enterprise-grade authentication (RBAC).</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>Digitalization IT AID</h4>
+                    <span class="date">Occupational Health and Safety Institute | Aug 2025 - Feb 2026</span>
+                    <p>Spearheaded digital transformation of manual OHS processes onto a centralized digital platform.</p>
+                </div>
+                <div class="timeline-item">
+                    <h4>IT & Business Development Assistant</h4>
+                    <span class="date">RASO Mine Ltd | Jun 2022 - May 2024</span>
+                    <p>Provided technical support, managed IT security protocols, and prepared compelling technical sales presentations.</p>
+                </div>
             </div>
-            <div class="item-subtitle">RASO Mine Ltd, Ndola</div>
-            <ul>
-                <li>Provided comprehensive technical support to staff, troubleshooting hardware, software, and network issues to ensure seamless daily operations[cite: 2].</li>
-                <li>Provided first-line support for hardware and software issues in an industrial environment[cite: 2].</li>
-                <li>Leveraged technical expertise to prepare compelling sales presentations and demonstrations for clients, effectively communicating the company's value proposition[cite: 2].</li>
-                <li>Acted as a point of contact for potential clients, utilizing strong communication skills to understand their needs and present company offerings[cite: 2].</li>
-                <li>Assisted in maintaining user accounts and IT security protocols, ensuring a secure and reliable technological environment[cite: 2].</li>
-                <li>Managed the setup, configuration, and maintenance of desktops, laptops, and printers, minimizing downtime for the sales and management teams[cite: 2].</li>
-            </ul>
-        </div>
 
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">Lead Software Engineer & Systems Architect (Contract-based)</span>
-                <span class="item-date">October 2025 – March 2026</span>
-            </div>
-            <div class="item-subtitle">Commonwealth RB, Ndola</div>
-            <ul>
-                <li>Built and designed the company's front-end website from scratch, handling UX/UI design through to implementation[cite: 2].</li>
-                <li>Spearheaded the conceptualization, system design, and full-stack development of the official enterprise website platform from scratch, aligning technological solutions with organizational goals[cite: 2].</li>
-                <li>Architected a modular, highly available system topology using microservices/RESTful APIs, optimizing server-side processing and ensuring minimal latency under high concurrent user traffic[cite: 2].</li>
-                <li>Supervised the development lifecycle and engineered a highly responsive, secure user interface utilizing modern JavaScript frameworks, backed by a robust, secure database schema design[cite: 2].</li>
-                <li>Integrated enterprise-grade authentication protocols, role-based access control (RBAC), and multi-layered data encryption mechanisms to safeguard sensitive organizational data[cite: 2].</li>
-                <li>Orchestrated the deployment strategy using cloud infrastructure, leveraging containerization and automated CI/CD pipelines to ensure seamless, zero-downtime updates and reliable system performance[cite: 2].</li>
-            </ul>
-        </div>
-
-        <div class="item">
-            <div class="item-header">
-                <span class="item-title">IT Infrastructure Administrator & Systems Security Engineer (Contract-based)</span>
-                <span class="item-date">May 2026 – August 2026</span>
-            </div>
-            <div class="item-subtitle">Creative Touch Branding, Kitwe</div>
-            <ul>
-                <li>Engineered and setup installation of CCTV security footprint and deploying, configuring enterprise Hikvision hardware; established isolated network subnets, secure IP routing, and centralized storage configurations to maintain fault-tolerant, high-bandwidth surveillance feeds across the company premises[cite: 2].</li>
-                <li>Designed, installed, and configured the company's biometric fingerprint scanner hardware from the ground up and engineered the access control system by linking physical authentication nodes with Hikvision iVMS software and implementing custom database schema configurations to automate personnel access logging, audit trails, and employee check-in/check-out tracking[cite: 2].</li>
-                <li>Designed and configured an executive command node featuring centralized multi-screen endpoint monitoring, client-side telemetry tracking, and administrative privileges to oversee workstation activities across the enterprise network[cite: 2].</li>
-                <li>Configured and deployed local server systems, establishing baseline security protocols, role-based access control (RBAC), user account management, and optimized data routing to ensure high network uptime and reliability[cite: 2].</li>
-                <li>Executed system-wide security hardening, incorporating encrypted communication streams between security hardware and central servers, endpoint privilege management, and automated failover logging to protect internal operational data[cite: 2].</li>
-            </ul>
         </div>
     </section>
 
-    <section>
-        <h2>Skills</h2>
+    <!-- SKILLS & PROJECTS SECTION -->
+    <section id="skills">
+        <h2 class="section-title">Technical <span>Expertise</span></h2>
+        
         <div class="skills-grid">
-            <div class="skill-category">
-                <h3>Technical Skills</h3>
-                <div class="skill-list">
-                    <p><strong>MCSD, CSSLP:</strong> Very good[cite: 2]</p>
-                    <p><strong>Networking (Cisco Networking):</strong> Very good[cite: 2]</p>
-                    <p><strong>Database Design & Admin (MSSQL, MySQL, PostgreSQL):</strong> Excellent[cite: 2]</p>
-                    <p><strong>Mobile App Development (Android/iOS):</strong> Very good[cite: 2]</p>
-                    <p><strong>Programming Languages (PHP, Java, JavaScript, HTML, CSS, .NET, C++, Python):</strong> Excellent[cite: 2]</p>
-                    <p><strong>Version Control Systems (SVN, CVS, Git):</strong> Very good[cite: 2]</p>
-                    <p><strong>Operating Systems (Linux & Windows):</strong> Excellent[cite: 2]</p>
-                    <p><strong>Software & Tools (MS Office Suite, Photoshop, Canva):</strong> Very good[cite: 2]</p>
+            <div class="skill-card">
+                <h4>Languages & Frameworks</h4>
+                <p>Python, Java, C++, JavaScript, HTML, CSS, PHP, .NET Platform, React, Node.js, Flask</p>
+            </div>
+            <div class="skill-card">
+                <h4>Databases & Cloud</h4>
+                <p>MSSQL, MySQL, PostgreSQL, Microsoft Azure, Cloud Computing</p>
+            </div>
+            <div class="skill-card">
+                <h4>Networking & Security</h4>
+                <p>Cisco Networking, Cybersecurity Awareness, Access Control (RBAC), System Hardening</p>
+            </div>
+            <div class="skill-card">
+                <h4>Tools & Version Control</h4>
+                <p>Git, SVN, CVS, Linux, Windows, Microsoft Office Suite, Photoshop, Canva</p>
+            </div>
+        </div>
+
+        <h2 class="section-title projects-title">Key <span>Projects</span></h2>
+        <div class="bg-container">
+            <div class="bg-column">
+                <div class="timeline-item">
+                    <h4>AI Career Guidance System</h4>
+                    <span class="date">Final Year Project</span>
+                    <p>Developed a proprietary recommendation engine from the ground up using Python and Scikit-learn. Leveraged NLP to parse user skills and ambitions. Built a responsive web interface with React and a robust RESTful API with Node.js/Flask. Successfully provided users with top 5 career matches and skill gaps.</p>
                 </div>
             </div>
-
-            <div class="skill-category">
-                <h3>Soft Skills</h3>
-                <div class="skill-list">
-                    <p><strong>Leadership:</strong> Excellent[cite: 2]</p>
-                    <p><strong>Programming & Coding:</strong> Excellent[cite: 2]</p>
-                    <p><strong>Time Management:</strong> Excellent[cite: 2]</p>
-                    <p><strong>Creativity:</strong> Very good[cite: 2]</p>
-                    <p><strong>Problem-Solving:</strong> Very good[cite: 2]</p>
-                    <p><strong>Effective Communication:</strong> Very good[cite: 2]</p>
-                    <p><strong>Critical Thinking:</strong> Very good[cite: 2]</p>
-                    <p><strong>Social Skills:</strong> Very good[cite: 2]</p>
-                    <p><strong>Fast Learner:</strong> Very good[cite: 2]</p>
-                    <p><strong>Grit:</strong> Very good[cite: 2]</p>
+            <div class="bg-column">
+                <div class="timeline-item">
+                    <h4>Enterprise Website Platform</h4>
+                    <span class="date">Commonwealth RB</span>
+                    <p>Architected a modular, highly available system topology using microservices/RESTful APIs. Integrated enterprise-grade authentication protocols and multilayered data encryption mechanisms.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section>
-        <h2>Languages</h2>
-        <p><strong>English:</strong> Fluent | <strong>Bemba:</strong> Fluent[cite: 2]</p>
-    </section>
-
-    <section>
-        <h2>References</h2>
-        <div class="ref-grid">
-            <div class="ref-card">
-                <p><strong>Mr. Freeman Sichilima</strong></p>
-                <p>Deputy Registrar</p>
-                <p>Zambia University College of Technology, Ndola</p>
-                <p><strong>Phone:</strong> +260777798978</p>
+    <!-- CERTIFICATIONS SECTION -->
+    <section id="certifications">
+        <h2 class="section-title">Professional <span>Certifications</span></h2>
+        <div class="cert-grid">
+            <div class="cert-item">
+                <h4>Microsoft Azure Essentials</h4>
+                <p>Microsoft & LinkedIn | Mar 2026</p>
             </div>
-            <div class="ref-card">
-                <p><strong>Mukamooya Haamakowa</strong></p>
-                <p>IT Coordinator</p>
-                <p>Occupational Health and Safety Institute, Kitwe</p>
-                <p><strong>Phone:</strong> +260977360857 / +260968277968</p>
-                <p><strong>Email:</strong> Mukamooya.haamakowa@ohsi.org.zm / hamakowamukamoya@gmail.com</p>
+            <div class="cert-item">
+                <h4>Cybersecurity Awareness: Terminology</h4>
+                <p>LinkedIn Learning | Mar 2026</p>
             </div>
-            <div class="ref-card">
-                <p><strong>Mr. Ernest Mulenga</strong></p>
-                <p>Operations / Project Administrator</p>
-                <p>Commonwealth RB, Ndola</p>
-                <p><strong>Phone:</strong> +260763910021</p>
+            <div class="cert-item">
+                <h4>Basics of Digital Marketing</h4>
+                <p>Cambridge International Qualifications | Mar 2026</p>
+            </div>
+            <div class="cert-item">
+                <h4>Computer Networking</h4>
+                <p>Simplilearn SkillUP | Apr 2026</p>
+            </div>
+            <div class="cert-item">
+                <h4>ITAZ Membership & Practicing License</h4>
+                <p>Information and Communications Technology Association of Zambia</p>
             </div>
         </div>
     </section>
-</div>
+
+    <!-- CONTACT & FOOTER -->
+    <footer id="contact">
+        <h2 class="section-title">Reach Out <span>to Me</span></h2>
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h4>Contact</h4>
+                <a href="mailto:lunetajoseph1@gmail.com">lunetajoseph1@gmail.com</a>
+                <p>+260769324774</p>
+                <p>+260978442964</p>
+            </div>
+            <div class="footer-col">
+                <h4>Location</h4>
+                <p>CHACHACHA Kitwe Mukuba street EE2</p>
+                <p>Postal Code: 10101 Kitwe, Zambia</p>
+            </div>
+            <div class="footer-col">
+                <h4>Connect</h4>
+                <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener">LinkedIn</a>
+                <a href="https://github.com/joseph123and" target="_blank" rel="noopener">GitHub</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Joseph Luneta. All rights reserved.</p>
+        </div>
+    </footer>
 
 </body>
 </html>
