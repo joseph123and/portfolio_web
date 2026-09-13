@@ -5,436 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joseph Luneta | Software Engineer Portfolio</title>
     
-    <!-- Google Fonts: Playfair Display for headings, Inter for body -->
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
-
-    <style>
-        /* --- CSS VARIABLES & RESET --- */
-        :root {
-            --bg-color: #0a0a0a;
-            --surface-color: #121212;
-            --text-main: #f5f5f5;
-            --text-muted: #888888;
-            --accent: #ffffff;
-            --border-color: rgba(255, 255, 255, 0.1);
-            --font-heading: 'Playfair Display', serif;
-            --font-body: 'Inter', sans-serif;
-            --transition: all 0.3s ease;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            background-color: var(--bg-color);
-            color: var(--text-main);
-            font-family: var(--font-body);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        a {
-            color: var(--text-main);
-            text-decoration: none;
-            transition: var(--transition);
-        }
-
-        a:hover {
-            color: var(--text-muted);
-        }
-
-        ul {
-            list-style: none;
-        }
-
-        /* --- NAVIGATION --- */
-        nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            padding: 2rem 5%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background: rgba(10, 10, 10, 0.9);
-            -webkit-backdrop-filter: blur(10px);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border-color);
-        }
-
-        .logo {
-            font-family: var(--font-heading);
-            font-size: 1.5rem;
-            font-weight: 600;
-            letter-spacing: 1px;
-        }
-
-        .nav-links {
-            display: flex;
-            gap: 2.5rem;
-        }
-
-        .nav-links a {
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            font-weight: 500;
-        }
-
-        /* --- HERO SECTION --- */
-        .hero {
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8rem 5% 4rem;
-            gap: 4rem;
-        }
-
-        .hero-content {
-            flex: 1;
-            max-width: 600px;
-        }
-
-        .hero-content h1 {
-            font-family: var(--font-heading);
-            font-size: 4rem;
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
-            font-weight: 400;
-        }
-
-        .hero-content h1 span {
-            font-style: italic;
-            color: var(--text-muted);
-        }
-
-        .hero-content p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 2.5rem;
-            max-width: 500px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 0.8rem 2rem;
-            border: 1px solid var(--text-main);
-            border-radius: 50px;
-            font-size: 0.9rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: var(--transition);
-        }
-
-        .btn:hover {
-            background-color: var(--text-main);
-            color: var(--bg-color);
-        }
-
-        .hero-image {
-            flex: 1;
-            display: flex;
-            justify-content: flex-end;
-        }
-
-        .hero-image img {
-            width: 100%;
-            max-width: 450px;
-            height: 600px;
-            object-fit: cover;
-            border-radius: 50% / 40%; /* Creates the organic oval shape */
-            border: 1px solid var(--border-color);
-            filter: grayscale(20%);
-            transition: var(--transition);
-        }
-
-        .hero-image img:hover {
-            filter: grayscale(0%);
-        }
-
-        /* --- GENERAL SECTION STYLES --- */
-        section {
-            padding: 8rem 5%;
-            border-top: 1px solid var(--border-color);
-        }
-
-        .section-title {
-            font-family: var(--font-heading);
-            font-size: 3rem;
-            margin-bottom: 4rem;
-            font-weight: 400;
-        }
-
-        .section-title span {
-            font-style: italic;
-            color: var(--text-muted);
-            }
-
-            .projects-title {
-                margin-top: 6rem;
-        }
-
-        .projects-title {
-            margin-top: 6rem;
-        }
-
-        /* --- ABOUT SECTION --- */
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 1.5rem;
-        }
-
-        .about-image img {
-            width: 100%;
-            max-width: 400px;
-            height: 500px;
-            object-fit: cover;
-            border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%;
-            border: 1px solid var(--border-color);
-        }
-
-        /* --- BACKGROUND (CV) SECTION --- */
-        .bg-container {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6rem;
-        }
-
-        .bg-column h3 {
-            font-family: var(--font-heading);
-            font-size: 1.8rem;
-            margin-bottom: 2rem;
-            font-weight: 400;
-        }
-
-        .timeline-item {
-            margin-bottom: 2.5rem;
-            padding-left: 1.5rem;
-            border-left: 1px solid var(--border-color);
-            position: relative;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 8px;
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: var(--text-main);
-        }
-
-        .timeline-item h4 {
-            font-size: 1.1rem;
-            font-weight: 600;
-            margin-bottom: 0.3rem;
-        }
-
-        .timeline-item .date {
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
-            display: block;
-        }
-
-        .timeline-item p {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-        }
-
-        /* --- SKILLS & PROJECTS SECTION --- */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 4rem;
-        }
-
-        .skill-card {
-            background-color: var(--surface-color);
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            transition: var(--transition);
-        }
-
-        .skill-card:hover {
-            transform: translateY(-5px);
-            border-color: var(--text-muted);
-        }
-
-        .skill-card h4 {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
-        }
-
-        .skill-card p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* --- CERTIFICATIONS --- */
-        .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .cert-item {
-            padding: 2rem;
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-        }
-
-        .cert-item h4 {
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .cert-item p {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-        }
-
-        /* --- CONTACT & FOOTER --- */
-        footer {
-            padding: 6rem 5% 3rem;
-            border-top: 1px solid var(--border-color);
-            background-color: var(--surface-color);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 4rem;
-            margin-bottom: 4rem;
-        }
-
-        .footer-col h4 {
-            font-family: var(--font-heading);
-            font-size: 1.3rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .footer-col p, .footer-col a {
-            font-size: 0.95rem;
-            color: var(--text-muted);
-            margin-bottom: 0.8rem;
-            display: block;
-        }
-
-        .footer-col a:hover {
-            color: var(--text-main);
-        }
-
-        .footer-bottom {
-            text-align: center;
-            padding-top: 2rem;
-            border-top: 1px solid var(--border-color);
-            font-size: 0.85rem;
-            color: var(--text-muted);
-        }
-
-        /* --- RESPONSIVE DESIGN --- */
-        @media (max-width: 992px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 10rem;
-            }
-
-            .hero-content {
-                max-width: 100%;
-            }
-
-            .hero-content p {
-                margin: 0 auto 2.5rem;
-            }
-
-            .hero-image {
-                justify-content: center;
-            }
-
-            .about-grid, .bg-container {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-
-            .about-image {
-                display: flex;
-                justify-content: center;
-            }
-
-            .nav-links {
-                display: none; /* Simplification for mobile, could add a hamburger menu */
-            }
-        }
-
-        @media (max-width: 768px) {
-            .hero-content h1 {
-                font-size: 3rem;
-            }
-
-            .section-title {
-                font-size: 2.5rem;
-            }
-
-            section {
-                padding: 5rem 5%;
-            }
-        }
-    </style>
+    
+    <!-- Link to CSS -->
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
     <!-- NAVIGATION -->
-    <nav>
+    <nav class="navbar">
         <div class="logo">Joseph Luneta</div>
-        <div class="nav-links">
-            <a href="#about">About</a>
-            <a href="#background">Background</a>
-            <a href="#skills">Skills</a>
-            <a href="#contact">Contact</a>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#background">Background</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact" class="pill-btn">Contact</a></li>
+        </ul>
+        <!-- Mobile Menu Toggle -->
+        <div class="hamburger" id="mobile-menu">
+            <span></span>
+            <span></span>
+            <span></span>
         </div>
     </nav>
 
     <!-- HERO SECTION -->
-    <header class="hero">
+    <header class="hero-section animate-on-scroll">
         <div class="hero-content">
-            <h1>Welcome to My <span>Portfolio</span></h1>
-            <p>I am Joseph Luneta, a Software Engineer, Digital Innovator, and Systems Architect. I bridge the gap between data chaos and structured impact, building systems that endure.</p>
-            <a href="#contact" class="btn">Work with me today &rarr;</a>
+            <h1 class="hero-title">Welcome to My <span>Portfolio</span></h1>
+            <p class="hero-desc">I am Joseph Luneta, a Software Engineer, Digital Innovator, and Systems Architect. I bridge the gap between data chaos and structured impact, building systems that endure.</p>
+            <div class="hero-actions">
+                <a href="#contact" class="pill-btn large">Work with me today &rarr;</a>
+                <!-- CV Download Link -->
+                <a href="./assets/Joseph_Luneta_CV.pdf" download class="pill-btn large download-btn">Download CV &darr;</a>
+            </div>
         </div>
-        <div class="hero-image">
-            <!-- Replace this src with the exact filename in your assets folder -->
-            <img src="./assets/picture.jpg" alt="Joseph Luneta Portrait">
+        <div class="hero-image-wrapper">
+            <div class="tilted-oval-frame">
+                <!-- Your main picture -->
+                <img src="./assets/picture.jpg" alt="Joseph Luneta Portrait">
+            </div>
         </div>
     </header>
 
     <!-- ABOUT SECTION -->
-    <section id="about">
+    <section id="about" class="about-section animate-on-scroll">
         <h2 class="section-title">Who is <span>Joseph?</span></h2>
         <div class="about-grid">
             <div class="about-text">
@@ -442,14 +61,13 @@
                 <p>I have applied this architectural lens to spearhead digital transformations, moving organizations from manual, paper-based processes to centralized, digital ecosystems that drive operational efficiency. My "grit" and commitment to innovation allow me to connect technical infrastructure with real business needs.</p>
             </div>
             <div class="about-image">
-                <!-- Replace this src with the exact filename in your assets folder -->
                 <img src="./assets/picture 2.jpg" alt="Joseph Luneta Casual">
             </div>
         </div>
     </section>
 
     <!-- BACKGROUND SECTION -->
-    <section id="background">
+    <section id="background" class="bg-section animate-on-scroll">
         <h2 class="section-title">My <span>Background</span></h2>
         <div class="bg-container">
             
@@ -495,10 +113,9 @@
         </div>
     </section>
 
-    <!-- SKILLS & PROJECTS SECTION -->
-    <section id="skills">
+    <!-- SKILLS SECTION -->
+    <section id="skills" class="skills-section animate-on-scroll">
         <h2 class="section-title">Technical <span>Expertise</span></h2>
-        
         <div class="skills-grid">
             <div class="skill-card">
                 <h4>Languages & Frameworks</h4>
@@ -517,28 +134,47 @@
                 <p>Git, SVN, CVS, Linux, Windows, Microsoft Office Suite, Photoshop, Canva</p>
             </div>
         </div>
+    </section>
 
-        <h2 class="section-title projects-title">Key <span>Projects</span></h2>
-        <div class="bg-container">
-            <div class="bg-column">
-                <div class="timeline-item">
-                    <h4>AI Career Guidance System</h4>
-                    <span class="date">Final Year Project</span>
-                    <p>Developed a proprietary recommendation engine from the ground up using Python and Scikit-learn. Leveraged NLP to parse user skills and ambitions. Built a responsive web interface with React and a robust RESTful API with Node.js/Flask. Successfully provided users with top 5 career matches and skill gaps.</p>
+    <!-- PROJECTS SECTION (WITH MEDIA) -->
+    <section id="projects" class="projects-section animate-on-scroll">
+        <h2 class="section-title">Key <span>Projects</span></h2>
+        
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card">
+                <div class="project-media">
+                    <!-- Replace src with your actual screenshot -->
+                    <img src="./assets/project1.png" alt="AI Career Guidance System Screenshot">
+                    <!-- Optional: If you have a video, uncomment below and add your video link -->
+                    <!-- <video controls src="./assets/project1_video.mp4"></video> -->
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Final Year Project</span>
+                    <h3 class="project-title">AI Career Guidance System</h3>
+                    <p class="project-desc">Developed a proprietary recommendation engine from the ground up using Python and Scikit-learn. Leveraged NLP to parse user skills and ambitions. Built a responsive web interface with React and a robust RESTful API with Node.js/Flask. Successfully provided users with top 5 career matches and skill gaps.</p>
+                    <a href="#" class="arrow-link">View Project &rarr;</a>
                 </div>
             </div>
-            <div class="bg-column">
-                <div class="timeline-item">
-                    <h4>Enterprise Website Platform</h4>
-                    <span class="date">Commonwealth RB</span>
-                    <p>Architected a modular, highly available system topology using microservices/RESTful APIs. Integrated enterprise-grade authentication protocols and multilayered data encryption mechanisms.</p>
+
+            <!-- Project 2 -->
+            <div class="project-card">
+                <div class="project-media">
+                    <!-- Replace src with your actual screenshot -->
+                    <img src="./assets/project2.png" alt="Enterprise Website Platform Screenshot">
+                </div>
+                <div class="project-info">
+                    <span class="project-category">Commonwealth RB</span>
+                    <h3 class="project-title">Enterprise Website Platform</h3>
+                    <p class="project-desc">Architected a modular, highly available system topology using microservices/RESTful APIs. Integrated enterprise-grade authentication protocols and multilayered data encryption mechanisms.</p>
+                    <a href="#" class="arrow-link">View Project &rarr;</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- CERTIFICATIONS SECTION -->
-    <section id="certifications">
+    <section id="certifications" class="cert-section animate-on-scroll">
         <h2 class="section-title">Professional <span>Certifications</span></h2>
         <div class="cert-grid">
             <div class="cert-item">
@@ -565,8 +201,8 @@
     </section>
 
     <!-- CONTACT & FOOTER -->
-    <footer id="contact">
-        <h2 class="section-title">Reach Out <span>to Me</span></h2>
+    <footer id="contact" class="footer animate-on-scroll">
+        <h2 class="footer-title">Reach Out <span>to Me</span></h2>
         <div class="footer-grid">
             <div class="footer-col">
                 <h4>Contact</h4>
@@ -581,8 +217,8 @@
             </div>
             <div class="footer-col">
                 <h4>Connect</h4>
-                <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener">LinkedIn</a>
-                <a href="https://github.com/joseph123and" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://linkedin.com/in/joseph-luneta-aa062833b" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+                <a href="https://github.com/joseph123and" target="_blank" rel="noopener noreferrer">GitHub</a>
             </div>
         </div>
         <div class="footer-bottom">
@@ -590,5 +226,7 @@
         </div>
     </footer>
 
+    <!-- Link to JS -->
+    <script src="script.js"></script>
 </body>
 </html>
