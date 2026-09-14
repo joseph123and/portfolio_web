@@ -133,6 +133,45 @@ section { padding: 8rem 5%; border-top: 1px solid var(--border-color); }
 .project-title { font-family: var(--font-heading); font-size: 1.8rem; margin: 0.5rem 0 1rem; font-weight: 400; }
 .project-desc { font-size: 1rem; color: var(--text-muted); margin-bottom: 1.5rem; }
 .view-btn { font-size: 0.9rem; font-weight: 600; color: var(--text-main); letter-spacing: 1px; }
+/* --- PROFESSIONAL SHOWCASE SECTION --- */
+.showcase-section {
+    padding: 8rem 5%;
+    border-top: 1px solid var(--border-color);
+}
+
+.showcase-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.showcase-item {
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    background-color: var(--surface-color);
+    transition: var(--transition);
+}
+
+.showcase-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--text-muted);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.6);
+}
+
+.showcase-item img {
+    width: 100%;
+    height: 500px;
+    object-fit: cover;
+    display: block;
+    filter: grayscale(20%);
+    transition: var(--transition);
+}
+
+.showcase-item:hover img {
+    filter: grayscale(0%);
+    transform: scale(1.02);
+}
 
 /* --- MODAL (GALLERY) STYLES --- */
 .modal {
